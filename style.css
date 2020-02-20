@@ -1,0 +1,257 @@
+h1 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 24px;
+    font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+}
+h3 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 19px;
+    font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+p { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px;
+    font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
+div { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px;
+    font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
+blockquote { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; }
+pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 13px;
+    font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+.submit{
+   padding-top: 5px;
+   margin-top: 5px;
+   padding-bottom: 5px; 
+   margin-bottom: 5px;
+}
+.people {
+  grid-area: people;
+   padding-left: 5px;
+   border-style:solid;
+   border-color:gray;
+   border-width:2px;
+   border-radius:15px;
+   justify-self: stretch;
+   align-self: stretch;
+   text-align:center;
+}
+.task-card {
+   height: 100px;
+   justify-self: stretch;
+   background-color: #ffcccc;
+   position: relative;
+   margin:4px;
+   padding-left: 3px;
+}
+.task-name{
+   text-align: left;
+   padding-top:7px;
+   padding-bottom: 5px;
+   margin-bottom: 0px;
+}
+.task-description{
+   text-align: left;
+   padding-top: 1px;
+   margin-top: 1px;
+   padding-bottom: 0px;
+   margin-bottom: 0px;
+}
+.task-duration{
+   text-align: left;
+   padding-top: 1px;
+   margin-top: 1px;
+   padding-bottom: 0px;
+   margin-bottom: 0px;
+}
+.task-completion{
+   position: absolute;
+   top: 0;
+   right: 0;
+   font-size: 20px;
+}
+
+.calendar {
+  grid-area: calendar;
+   padding-top:5px;
+   padding-left: 10px;
+   border-style:solid;
+   border-color:gray;
+   border-width:2px;
+   border-radius:15px;
+   justify-self: stretch;
+   align-self: stretch;
+   text-align:center;
+}
+
+.calendar img {
+   height:600px;
+}
+.pieChart {
+  grid-area: pieChart;
+   border-style:solid;
+   border-color:gray;
+   border-width:2px;
+   border-radius:15px;
+   padding-top:5px;
+   padding-left: 5px;
+   justify-self: stretch;
+   align-self: stretch;
+   text-align:center;
+   
+}
+.tasks {
+  grid-area: tasks;
+   border-style:solid;
+   border-color:gray;
+   border-width:2px;
+   border-radius:15px;
+   justify-self: stretch;
+   align-self: stretch;
+   margin-bottom: 20px;
+   text-align:center;
+}
+.card3 {
+  grid-area: card3;
+   border-color:gray;
+   border-width:5px;
+   justify-self: stretch;
+   align-self: stretch;
+}
+.main {
+  grid-area: main;
+   background-color: LightSkyBlue;
+   justify-self: stretch;
+   align-self: stretch;
+}
+.aside {
+  grid-area: aside;
+   background-color: gray;
+   justify-self: stretch;
+   align-self: stretch;
+}
+
+
+.container {
+   display: grid;
+   background-color:#F0FFFF;
+   border-color: #F0FFFF; 
+
+   grid-template-columns:20% 70% auto;
+   grid-template-rows: 70% 30%;
+   grid-column-gap: 10px;
+   grid-row-gap: 10px;
+   grid-template-areas:
+      "tasks calendar pieChart"
+      "people calendar .";
+   min-height: 100vh;
+}
+
+@media (max-width: 1024px) {
+   .container {
+       display: grid;
+       grid-template-columns: 20% 70% auto;
+       grid-template-rows: 70% 30%;
+       grid-column-gap: 10px;
+       grid-row-gap: 10px;
+       grid-template-areas: "tasks calendar pieChart" "people calendar .";
+       min-height: 100vh; }
+   }
+
+@media (max-width: 400px) {
+   /* phone layout here */
+   .container {
+       display: grid;
+       grid-template-columns: 35% 65%;
+       grid-template-rows: auto;
+       grid-column-gap: 5px;
+       grid-row-gap: 15px;
+       grid-template-areas: "menu1 ." "menu2 menu2" "card1 card1" "card2 card2" "card3 card3" "main main";
+       min-height: 100vh; }
+   }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute;
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+}
+
+form duration {
+    display: flex;
+    flex-direction: row;
+}
+nav h1 {
+    margin-left: 40%;
+    margin-right: 25%;
+}
+
+
+.addTask {
+    height: 50%;
+    align-self: center;
+    justify-self: end;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.formStuff {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+
