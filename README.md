@@ -1,3 +1,8 @@
-# project5
-Basic instructions go here.
+# project
+
+Members:
+Anthony Chen
+Jonathan Liu
+Priya Kini
+Sahil Doshi
 
