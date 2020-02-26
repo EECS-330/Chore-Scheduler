@@ -10,7 +10,6 @@ document.getElementById(checkName).parentElement.style.background = '#ffcccc';
 }
 
 var people = [{"id":0,"name":"User0", "people":["John Smith", "Bob Jones", "Sam Johnson"]},{"id":1,"name":"User1", "people": ["yes", "no", "maybe"]}]
-displayPeople(people)
 
 // Get the task modal
 var modal_task = document.getElementById("myModal_task");
@@ -31,8 +30,8 @@ var span_person = document.getElementsByClassName("close")[1];
 // Get the <span> element that closes the task modal
 var span_task = document.getElementsByClassName("close")[0];
 
-var submit_task = document.getElementById("submitBtn_task");
 // When the user clicks the button, open the modal
+
 btn_task.onclick = function() {
     modal_task.style.display = "block";
 }
@@ -52,13 +51,9 @@ span_person.onclick = function() {
     modal_person.style.display = "none";
 }
 
-submit_task.onclick = function() {
-    modal_task.style.display = "none";
-}
-
 function displayPeople(json){
     const element = document.getElementById("people");
-    var user = 0;
+    var user = window.location.hash.substr(1);
     var names = json[user].people;
     for (var i = 0; i < names.length; i++) {
         const person = document.createElement("section");
@@ -80,4 +75,23 @@ window.onclick = function(event) {
     else if (event.target == modal_person) {
         modal_person.style.display = "none";
     }
+}
+
+function load_home() {
+    var input = document.getElementById("userInput").value;
+    if (isNaN(input)) {
+        throwError("Invalid input, input must be integer")
+    }
+    if (input > people.length) {
+        throwError("Not a valid userID, there are currently " + people.length + " users")
+    } else {
+        window.location.assign("./home.html#" + input);
+        // window.addEventListener("hashchange", function (event){
+        //     alert('change');
+        // },false);
+    }
+}
+
+function throwError(message) {
+    document.getElementById("Error").innerHTML = message;
 }
