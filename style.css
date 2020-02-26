@@ -29,6 +29,30 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
    align-self: stretch;
    text-align:center;
 }
+.person-card{
+			height: 28px;
+			justify-self: stretch;
+			padding: 4px;
+			border-width: 2px;
+			border-color: white;
+			margin: 2px;
+			background-color: #bbd0f7;
+			align-items: center;
+			line-height: 30px;
+			white-space: nowrap;
+}
+.person-name{
+			display: inline;
+			padding-top: 10px; 
+			padding-bottom: 10px; 
+}
+.person-icon{
+			display: inline;
+			float: left;
+			height: 28px;
+			width: 28px;
+			margin: 0px;
+}
 .task-card {
    height: 100px;
    justify-self: stretch;
@@ -196,6 +220,14 @@ nav h1 {
     height: 50%;
     align-self: center;
     justify-self: end;
+}
+.people-title{
+				display: inline-block;
+}
+.addPerson{
+    display: inline-block;
+    justify-self: end;
+    margin-right: 0px;
 }
 
 /* Modal Content */

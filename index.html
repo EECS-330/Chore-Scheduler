@@ -3,17 +3,19 @@
 <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal -->
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Lab 03</title>
+  <title>Chore-Scheduler</title>
+   <script src = "require.js"></script>
   <link rel="stylesheet" href="./style.css">
-
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <!-- https://css-tricks.com/snippets/css/complete-guide-grid/ -->
 <div class="container">
    <!-- left menu -->
-   <section class="people">
-      <h1>People</h1>
+   <section class="people", id="people">
+      <h1 class="people-title">People</h1>
+      <button id="myBtn_person" class = "addPerson">+</button>
+      </section>
    </section>
    
    <!-- right menu -->
@@ -32,11 +34,11 @@
       <nav>
          <h1>Tasks</h1>
          <!-- Trigger/Open The Modal -->
-         <button id="myBtn" class = "addTask">+</button>
+         <button id="myBtn_task" class = "addTask">+</button>
       </nav>
       <!-- The Modal -->
-      <!-- The Modal -->
-      <div id="myModal" class="modal">
+      <!-- The Modal for Task Addition -->
+      <div id="myModal_task" class="modal">
 
          <!-- Modal content -->
          <div class="modal-content">
@@ -58,14 +60,34 @@
                   </duration>
                   <label> Days</label>
                   <div class = "dayBoxes">
-                     <input type="checkbox" id="Mon" name="task" onclick="greenify(this.name);"> Mon </input>
-                     <input type="checkbox" id="Tue" name="task" onclick="greenify(this.id);"> Tue </input>
-                     <input type="checkbox" id="Wed" name="task" onclick="greenify(this.id);"> Wed </input>
-                     <input type="checkbox" id="Thu" name="task" onclick="greenify(this.id);"> Thu </input>
-                     <input type="checkbox" id="Fri" name="task" onclick="greenify(this.id);"> Fri </input>
-                     <input type="checkbox" id="Sat" name="task" onclick="greenify(this.id);"> Sat </input>
-                     <input type="checkbox" id="Sun" name="task" onclick="greenify(this.id);"> Sun </input>
+                     <input type="checkbox" id="Mon" name="task" onclick="greenify(this.id)"> Mon </input>
+                     <input type="checkbox" id="Tue" name="task" onclick="greenify(this.id)"> Tue </input>
+                     <input type="checkbox" id="Wed" name="task" onclick="greenify(this.id)"> Wed </input>
+                     <input type="checkbox" id="Thu" name="task" onclick="greenify(this.id)"> Thu </input>
+                     <input type="checkbox" id="Fri" name="task" onclick="greenify(this.id)"> Fri </input>
+                     <input type="checkbox" id="Sat" name="task" onclick="greenify(this.id)"> Sat </input>
+                     <input type="checkbox" id="Sun" name="task" onclick="greenify(this.id)"> Sun </input>
                   </div>
+
+                  <input type="submit" value="Submit">
+               </form>
+            </div>
+         </div>
+
+      </div>
+      <!-- The Modal for Person Addition -->
+      <div id="myModal_person" class="modal">
+
+         <!-- Modal content -->
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="formStuff">
+               <form>
+                  <label for="tname">Name</label>
+                  <input type="text" id="tname" placeholder="Ex: cleaning..">
+
+                  <label for="tdescription">Email Address</label>
+                  <input type="text" id="tdescription" placeholder="Ex: vacuum floors, swiffer floors, ...">
 
                   <input type="submit" value="Submit">
                </form>
