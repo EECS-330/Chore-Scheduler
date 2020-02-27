@@ -6,7 +6,7 @@
   <title>Chore-Scheduler</title>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body onload = displayPeople(people)>
+<body onload = "displayPeople(people); displayTasks(tasks);">
 <!-- partial:index.partial.html -->
 <!-- https://css-tricks.com/snippets/css/complete-guide-grid/ -->
 <div class="container">
@@ -94,19 +94,21 @@
 
       </div>
 
-      <section class="task-card" id="task1">
-         <h3 class="task-name">Title of Task</h3>
-         <p class="task-description">Description: clean room, vacuum </p>
-         <p class="task-duration">Duration: 10 minutes</p>
-         <input type="checkbox" id="completed1" name="task" class="task-completion" value="vachinde" onclick="greenify(this.id);">
-         <br>
-      </section>
-      <section class="task-card" id = "task2">
-         <h3 class="task-name">Title of Task</h3>
-         <p class="task-description">Description: clean room, vacuum </p>
-         <p class="task-duration">Duration: 45 minutes</p>
-         <input type="checkbox" id="completed2" class="task-completion" name="task" value="what" onclick="greenify(this.id);">
-         <br>
+      <section id ="tasks">
+<!--         <section class="task-card">-->
+<!--            <h3 class="task-name">Title of Task</h3>-->
+<!--            <p class="task-description">Description: clean room, vacuum </p>-->
+<!--            <p class="task-duration">Duration: 10 minutes</p>-->
+<!--            <input type="checkbox" id="completed1" name="task" class="task-completion" value="vachinde" onclick="greenify(this.id);">-->
+<!--            <br>-->
+<!--         </section>-->
+<!--         <section class="task-card">-->
+<!--            <h3 class="task-name">Title of Task</h3>-->
+<!--            <p class="task-description">Description: clean room, vacuum </p>-->
+<!--            <p class="task-duration">Duration: 45 minutes</p>-->
+<!--            <input type="checkbox" id="completed2" class="task-completion" name="task" value="what" onclick="greenify(this.id);">-->
+<!--            <br>-->
+         </section>
       </section>
 
    </article>
