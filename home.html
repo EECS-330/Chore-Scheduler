@@ -57,7 +57,7 @@
                         <option value="min">Minutes</option>
                      </select>
                   </duration>
-                  <label> Days</label>
+                  <label> Days during the week when chore should be completed </label>
                   <div class = "dayBoxes">
                      <input type="checkbox" id="Mon" name="task" onclick="greenify(this.id)"> Mon </input>
                      <input type="checkbox" id="Tue" name="task" onclick="greenify(this.id)"> Tue </input>
@@ -66,6 +66,11 @@
                      <input type="checkbox" id="Fri" name="task" onclick="greenify(this.id)"> Fri </input>
                      <input type="checkbox" id="Sat" name="task" onclick="greenify(this.id)"> Sat </input>
                      <input type="checkbox" id="Sun" name="task" onclick="greenify(this.id)"> Sun </input>
+                  </div>
+                  <label> Frequency </label>
+                  <div class = "frequency">
+                     <input type="checkbox" id="Mon" name="task" onclick="greenify(this.id)"> One-Time </input>
+                     <input type="checkbox" id="Tue" name="task" onclick="greenify(this.id)"> Weekly </input>
                   </div>
                   <input type="submit" value="Submit" id = "SubmitBTN">
                </form>
