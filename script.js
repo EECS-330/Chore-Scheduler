@@ -78,17 +78,20 @@ span_personInfo.onclick = function() {
 }*/
 
 function submit_task(){
-    var description_ele = document.getElementById("tdescription");
-    var description = description_ele.value;
+    var taskName = document.getElementById("tname").value;
+    var description = document.getElementById("tdescription").value;
     var taskSection = document.getElementById("tasks");
+    var timeInput = document.getElementById("tinput").value;
+    var timeType = document.getElementById("timeType").value;
+
     //modal_task.style.display = "none";
-    taskSection.innerHTML += '<section class="task-card">' +
-        '<h3 class="task-name">Title of Task</h3>' + 
+    taskSection.innerHTML += `<section class="task-card">` +
+        `<h3 class="task-name">${taskName}</h3>` +
            `<p class="task-description">${description}</p>` +
-         '<p class="task-duration">Duration: 10 minutes</p>' +
-           '<input type="checkbox" id="completed1" name="task" class="task-completion" value="vachinde" onclick="greenify(this.id);">' +
-           '<br>' +
-    '</section>';
+         `<p class="task-duration">Duration: ${timeInput} ${timeType}</p>` +
+           `<input type="checkbox" id="completed1" name="task" class="task-completion" value="vachinde" onclick="greenify(this.id);">` +
+           `<br>` +
+    `</section>`;
     modal_task.style.display = "none";
     return false;
 }
@@ -118,12 +121,12 @@ function displayPeople(json){
     var user = window.location.hash.substr(1);
     var names = json[user].people;
     for (var i = 0; i < names.length; i++) {
-        var name = names[i]
+        var name = names[i];
         const person = document.createElement("section");
         person.setAttribute("class", "person-card");
-        var email = name.split(" ").join("") + "@gmail.com"
+        var email = name.split(" ").join("") + "@gmail.com";
         var time = Math.floor(Math.random()*(100));
-        emails[0][name] = [email, time]
+        emails[0][name] = [email, time];
         person.innerHTML = `
            <h3 class="person-name">${name}</h3>
            <img class="person-icon" src="https://cdn2.iconfinder.com/data/icons/people-80/96/Picture1-512.png">
