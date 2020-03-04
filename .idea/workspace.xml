@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ad5a217-bcdf-4122-84d1-07cc45a6fab6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +59,7 @@
       <workItem from="1582686822684" duration="2679000" />
       <workItem from="1582736355062" duration="3388000" />
       <workItem from="1582770455466" duration="986000" />
+      <workItem from="1583289032598" duration="6742000" />
     </task>
     <servers />
   </component>
@@ -63,15 +67,19 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="667" y="148" key="FileChooserDialogImpl" timestamp="1582687041579">
+    <state x="667" y="148" key="FileChooserDialogImpl" timestamp="1583290519072">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="667" y="148" key="FileChooserDialogImpl/-2560.0.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582687041579" />
+    <state x="667" y="148" key="FileChooserDialogImpl/-2560.0.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583290519072" />
     <state x="500" y="110" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582161931941" />
     <state x="402" y="112" key="SettingsEditor" timestamp="1582686861218">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="402" y="112" key="SettingsEditor/-2560.0.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1582686861218" />
+    <state x="780" y="451" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583291596641">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="780" y="451" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-2560.0.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1583291596641" />
     <state x="597" y="255" key="run.anything.popup" timestamp="1582686836652">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

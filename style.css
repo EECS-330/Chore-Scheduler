@@ -18,6 +18,7 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
    padding-bottom: 5px; 
    margin-bottom: 5px;
 }
+
 .people {
   grid-area: people;
    padding-left: 5px;
@@ -29,6 +30,7 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
    align-self: stretch;
    text-align:center;
 }
+
 .person-card{
 			height: 28px;
 			justify-self: stretch;
@@ -154,7 +156,7 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
    background-color:#F0FFFF;
    border-color: #F0FFFF; 
 
-   grid-template-columns:20% 70% auto;
+   grid-template-columns: 20% 60% auto;
    grid-template-rows: 70% 30%;
    grid-column-gap: 10px;
    grid-row-gap: 10px;
