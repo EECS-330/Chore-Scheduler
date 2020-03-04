@@ -5,22 +5,27 @@
   <meta charset="UTF-8">
   <title>Chore-Scheduler</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css" />
+
+			<!-- If you use the default popups, use this. -->
+		<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+		<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
 </head>
 <body onload = "displayPeople(people); displayTasks(tasks);">
 <!-- partial:index.partial.html -->
 <!-- https://css-tricks.com/snippets/css/complete-guide-grid/ -->
 <div class="container">
    <!-- left menu -->
-   <section class="people", id="people">
+
+   <article class="people" id="people">
       <h1 class="people-title">People</h1>
       <button id="myBtn_person" class = "addPerson">+</button>
-      </section>
-   </section>
+   </article>
    
    <!-- right menu -->
    <section class="calendar">
       <h1>Calendar</h1>
-      <img src="https://i.pinimg.com/originals/87/99/ef/8799ef26b4d11cefac2a381c2b9cf1ab.jpg">
+      <div id="calendar" style="height: 800px;"></div>
    </section>
 
    <!-- card 1 -->
@@ -35,15 +40,14 @@
          <!-- Trigger/Open The Modal -->
          <button id="myBtn_task" class = "addTask">+</button>
       </nav>
-      <!-- The Modal -->
+
       <!-- The Modal for Task Addition -->
       <div id="myModal_task" class="modal">
-
          <!-- Modal content -->
          <div class="modal-content">
             <span class="close">&times;</span>
             <div class="formStuff">
-               <form>
+               <form onsubmit="return submit_task();">
                   <label for="tname">Task Name</label>
                   <input type="text" id="tname" placeholder="Ex: cleaning..">
 
@@ -57,7 +61,7 @@
                         <option value="min">Minutes</option>
                      </select>
                   </duration>
-                  <label> Days</label>
+                  <label> Days during the week when chore should be completed </label>
                   <div class = "dayBoxes">
                      <input type="checkbox" id="Mon" name="task" onclick="greenify(this.id)"> Mon </input>
                      <input type="checkbox" id="Tue" name="task" onclick="greenify(this.id)"> Tue </input>
@@ -67,7 +71,12 @@
                      <input type="checkbox" id="Sat" name="task" onclick="greenify(this.id)"> Sat </input>
                      <input type="checkbox" id="Sun" name="task" onclick="greenify(this.id)"> Sun </input>
                   </div>
-                  <input type="submit" value="Submit" id = "SubmitBTN">
+                  <label> Frequency </label>
+                  <div class = "frequency">
+                     <input type="checkbox" id="Mon" name="task" onclick="greenify(this.id)"> One-Time </input>
+                     <input type="checkbox" id="Tue" name="task" onclick="greenify(this.id)"> Weekly </input>
+                  </div>
+                  <input type="submit">
                </form>
             </div>
          </div>
@@ -80,35 +89,29 @@
          <div class="modal-content">
             <span class="close">&times;</span>
             <div class="formStuff">
-               <form>
+               <form onsubmit="return submit_person();">
                   <label for="pname">Name</label>
                   <input type="text" id="pname" placeholder="Ex: Jeff, Smith, Bob">
 
                   <label for="email">Email Address</label>
                   <input type="text" id="email" placeholder="Ex: smithbob@gmail.com">
 
-                  <input type="submit" value="Submit">
+                  <input type="submit">
                </form>
             </div>
          </div>
+      </div>
 
+      <div id="personInformation" class="modal">
+         <!-- Modal content -->
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id = "information">
+            </div>
+         </div>
       </div>
 
       <section id ="tasks">
-<!--         <section class="task-card">-->
-<!--            <h3 class="task-name">Title of Task</h3>-->
-<!--            <p class="task-description">Description: clean room, vacuum </p>-->
-<!--            <p class="task-duration">Duration: 10 minutes</p>-->
-<!--            <input type="checkbox" id="completed1" name="task" class="task-completion" value="vachinde" onclick="greenify(this.id);">-->
-<!--            <br>-->
-<!--         </section>-->
-<!--         <section class="task-card">-->
-<!--            <h3 class="task-name">Title of Task</h3>-->
-<!--            <p class="task-description">Description: clean room, vacuum </p>-->
-<!--            <p class="task-duration">Duration: 45 minutes</p>-->
-<!--            <input type="checkbox" id="completed2" class="task-completion" name="task" value="what" onclick="greenify(this.id);">-->
-<!--            <br>-->
-         </section>
       </section>
 
    </article>
@@ -118,6 +121,80 @@
 </div>
 <!-- partial -->
   <script  src="./script.js"></script>
-
+		<script src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.js"></script>
+		<script src="https://uicdn.toast.com/tui.dom/v3.0.0/tui-dom.js"></script>
+		<script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
+		<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
+		<script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+        <script src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.js"></script>
+		<script>
+           var Calendar = tui.Calendar;
+           var calendar = new Calendar('#calendar', {
+           defaultView: 'week',
+           taskView: true,
+           scheduleView: ['time'],
+           useDetailPopup: true,
+              useCreationPopup: true,
+  		popupEdit: function() {
+            console.log('edit');
+    				}
+				});
+           calendar.createSchedules([
+    {
+        id: '1',
+        calendarId: '1',
+        title: 'Take out trash',
+        body: 'Brad Johnson',
+        category: 'time',
+        dueDateClass: '',
+        start: '2020-03-04T03:30:00+09:00',
+        end: '2020-03-04T05:30:00+09:00',
+        bgColor: 'DeepSkyBlue'
+    },
+    {
+        id: '2',
+        calendarId: '1',
+        title: 'Do dishes',
+        body: 'Steve Smith',
+        category: 'time',
+        dueDateClass: '',
+       start: '2020-03-06T04:30:00+09:00',
+       end: '2020-03-06T08:30:00+09:00',
+        bgColor: 'LightGreen'
+    },
+    {
+        id: '3',
+        calendarId: '1',
+        title: 'Swiffer the floor',
+        body: 'Mike Jones',
+        category: 'time',
+        dueDateClass: '',
+       start: '2020-03-05T11:30:00+09:00',
+       end: '2020-03-05T13:30:00+09:00',
+        bgColor: 'OrangeRed'
+    },
+    {
+        id: '4',
+        calendarId: '1',
+        title: 'Get groceries',
+        body: 'Steve Smith',
+        category: 'time',
+        dueDateClass: '',
+        start: '2020-03-04T09:30:00+09:00',
+        end: '2020-03-04T10:30:00+09:00',
+        bgColor: 'LightGreen'
+    }
+				]);
+           calendar.on({
+              'beforeDeleteSchedule': function(e) {
+                 calendar.deleteSchedule(e.schedule.id, e.schedule.calendarId);
+              },
+              'beforeUpdateSchedule': function (e) {
+                 e.schedule.start = e.start;
+                 e.schedule.end = e.end;
+                 calendar.updateSchedule(e.schedule.id, e.schedule.calendarId, e.schedule);
+              }
+           });
+		</script>
 </body>
 </html>
