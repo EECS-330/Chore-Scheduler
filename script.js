@@ -10,8 +10,12 @@ document.getElementById(checkName).parentElement.style.background = '#ffcccc';
 }
 var test = [1,2,3]
 var people = [{"id":0,"name":"User0", "people":["John Smith", "Bob Jones", "Sam Johnson"]},{"id":1,"name":"User1", "people": ["William", "Jeb", "Emily", "Alice"]}]
-var tasks = [{"id":0,"tasks":[["Trash", "Throwing out trash and replacing garbage bag", "10 minutes"], ["Clean", "Vaccum room and mop floor", "45 minutes"]]},
-    {"id":1,"tasks":[["Errand", "Buy groceries", "60 minutes"],["Clean", "cleaning bathroom", "30 minutes"], ["Errand", "Buy toilet paper", "15 minutes"]]}]
+
+var tasks = [{"id":0,"tasks":[["Trash", "Throwing out trash and replacing garbage bag", "Start: 12:30pm", "Duration: 2 hrs", '2020-03-04T12:30:00', '2020-03-04T14:30:00'],
+        ["Clean", "Vaccum room and mop floor", "Start: 8:30pm", "Duration: 2 hrs", '2020-03-05T20:30:00', '2020-03-05T22:30:00']]},
+    {"id":1,"tasks":[["Errand", "Buy groceries", "Start: 11:00am", "Duration: 30 minutes", '2020-03-05T11:00:00', '2020-03-05T11:30:00'],
+            ["Clean", "cleaning bathroom", "Start: 3:00pm", "Duration: 1 hr", '2020-03-06T14:30:00', '2020-03-06T15:30:00'],
+            ["Errand", "Buy toilet paper", "Start: 2:00pm", "Duration: 30 minutes", '2020-03-02T14:00:00', '2020-03-02T14:30:00']]}];
 var emails = [{}];
 
 // Get the task modal
@@ -140,20 +144,26 @@ function displayTasks(json) {
     const element = document.getElementById("tasks");
     var user = window.location.hash.substr(1);
     var tasks = json[user].tasks
+    var calendarTasks = [{}]
     for (var i = 0; i < tasks.length; i++) {
         const task = tasks[i];
         const thing = document.createElement("section");
         thing.setAttribute("class", "task-card");
+        thing.setAttribute("id", "task" + i);
         const taskid = "completed" + i;
         thing.innerHTML = `
             <h3 class="task-name">${task[0]}</h3>
             <p class="task-description">${task[1]}</p>
-            <p class="task-duration">${task[2]}</p>
+            <p class="task-duration">${task[2]}, ${task[3]}</p>
             <input type="checkbox" id=${taskid} class="task-completion" value="vachinde" onclick="greenify(this.id);">
             <br>
-        `
+        `;
+        var starttime = task[4];
+        var endtime = task[5];
+        calendarTasks[i] = {id: i, calendarId: '1', title: task[0], body: task[1], category: 'time', dueDateClass: '', start: starttime, end: endtime, bgColor: 'DeepSkyBlue'};
         element.appendChild(thing)
     }
+    calendar.createSchedules(calendarTasks);
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -199,4 +209,9 @@ function displayPerson() {
 
 function throwError(message) {
     document.getElementById("Error").innerHTML = message;
+}
+
+function deletetask(id) {
+    var id = "task" + id;
+    document.getElementById(id).remove();
 }
