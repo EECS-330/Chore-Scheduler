@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
 		<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
 </head>
-<body onload = "displayPeople(people); displayTasks(tasks);">
+<body onload = "displayPeople(people); displayTasks(tasks); check();">
 <!-- partial:index.partial.html -->
 <!-- https://css-tricks.com/snippets/css/complete-guide-grid/ -->
 <div class="container">
@@ -73,8 +73,8 @@
                   </div>
                   <label> Frequency </label>
                   <div class = "frequency">
-                     <input type="checkbox" id="Mon" name="task" onclick="greenify(this.id)"> One-Time </input>
-                     <input type="checkbox" id="Tue" name="task" onclick="greenify(this.id)"> Weekly </input>
+                     <input type="checkbox" id="One-Time" name="task" onclick="greenify(this.id)"> One-Time </input>
+                     <input type="checkbox" id="Weekly" name="task" onclick="greenify(this.id)"> Weekly </input>
                   </div>
 
                   <input type="submit" value="Submit" id = "SubmitBTN">
@@ -116,6 +116,7 @@
       <section id ="tasks">
       </section>
 
+      <button onclick = "allocateTasksToPeople();" type="button">Re-Allocate Tasks</button>
    </article>
 
    
