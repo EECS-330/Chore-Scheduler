@@ -3,14 +3,28 @@ function greenify(checkName)
    
    if (document.getElementById(checkName).checked) 
   {
-document.getElementById(checkName).parentElement.style.background = '#9fdf9f';
+    document.getElementById(checkName).parentElement.style.background = '#9fdf9f';
+    var res = checkName.split("completed");
+    var num = res[1];
+    num = parseInt(num);
+    (calendarTasks[num])["bgColor"] = "Gray";
+    calendar.clear();
+    calendar.createSchedules(calendarTasks);
+    calendar.render(true);
   } else {
-document.getElementById(checkName).parentElement.style.background = '#ffcccc';
+    document.getElementById(checkName).parentElement.style.background = '#ffcccc';
+    var res = checkName.split("completed");
+    var num = res[1];
+    num = parseInt(num);
+    (calendarTasks[num])["bgColor"] = (allPeople[allTaskstoPeople[num]])["color"];
+    calendar.clear();
+    calendar.createSchedules(calendarTasks);
+    calendar.render(true);
   }  
 }
 var test = [1,2,3]
 
-var allPeople = [{"id":0, "name": "John Smith", "color": "Red"},{ "id":1, "color":"Blue", "name": "Bob Jones"}, {"id":2, "name": "Sam Johnson", "color":"Orange"}]
+var allPeople = [{"id":0, "name": "John Smith", "color": '#5DB1D1'},{ "id":1, "color":"#FFB7B2", "name": "Bob Jones"}, {"id":2, "name": "Sam Johnson", "color":"#8FC1A9"}]
 var allTasks = [["Trash", "Throwing out trash and replacing garbage bag", "Start: 10:30am", "Duration: 2 hrs", '2020-03-11T10:30:00', '2020-03-11T12:30:00'],
 ["Clean", "Vaccum room and mop floor", "Start: 8:30pm", "Duration: 2 hrs", '2020-03-10T20:30:00', '2020-03-10T22:30:00'], ["Errand", "Buy groceries", "Start: 11:00am", "Duration: 30 minutes", '2020-03-12T11:00:00', '2020-03-12T11:30:00'],
 ["Clean", "cleaning bathroom", "Start: 3:00pm", "Duration: 1 hr", '2020-03-12T14:30:00', '2020-03-12T15:30:00'],
@@ -19,7 +33,10 @@ var allTaskstoPeople = [0, 1, 1, 0, 2];
 
 var Dates = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-var Colors = ["Red", "Blue", "Orange", "Green", "Blue", "Pink", "White", "Purple"];
+var Colors = [ '#5DB1D1','#FFB7B2','#8FC1A9','#FFDAC1', '#E2F0CB','#C7CEEA', ' #AFD5AA' , '#FF9AA2'  ]
+var calendarTasks = [{}];
+
+//var Colors = ["Red", "Blue", "Orange", "Green", "Blue", "Pink", "White", "Purple"];
 
 //var people = [{"id":0,"name":"User0", "people":["John Smith", "Bob Jones", "Sam Johnson"]},{"id":1,"name":"User1", "people": ["William", "Jeb", "Emily", "Alice"]}]
 
@@ -112,7 +129,7 @@ function allocateTasksToPeople(){
    	displayTasks();
 }
 
-function submit_task(){
+function submit_task(event){
     var taskName = document.getElementById("tname").value;
     var description = document.getElementById("tdescription").value;
     //var taskSection = document.getElementById("tasks");
@@ -143,11 +160,14 @@ function submit_task(){
         allTasks.push(newTask);
         console.log(newTask);
     }
-
-    //allocateTasksToPeople();
     modal_task.style.display = "none";
+    var form_task = document.getElementById("task_form");
+    form_task.reset();
     return false;
 }
+
+
+
 /*
 function submit_task2(){
     var taskName = document.getElementById("tname").value;
@@ -279,7 +299,6 @@ function displayTasks(json) {
     element.innerHTML = '';
     var user = window.location.hash.substr(1);
     var tasks = allTasks;
-    var calendarTasks = [{}]
     for (var i = 0; i < allTasks.length; i++) {
         const task = tasks[i];
         console.log(tasks[i]);
@@ -300,6 +319,7 @@ function displayTasks(json) {
             <br>
         `;
         element.appendChild(thing)
+        //if (taskid == )
     }
     calendar.clear();
     calendar.createSchedules(calendarTasks);
