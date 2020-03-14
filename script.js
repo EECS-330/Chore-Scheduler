@@ -33,7 +33,7 @@ var allTaskstoPeople = [0, 1, 1, 0, 2];
 
 var Dates = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-var Colors = [ '#5DB1D1','#FFB7B2','#8FC1A9','#FFDAC1', '#E2F0CB','#C7CEEA', ' #AFD5AA' , '#FF9AA2'  ]
+var Colors = [ '#5DB1D1','#FFB7B2','#8FC1A9','#FFDAC1', '#E2F0CB','#C7CEEA', '#AFD5AA' , '#FF9AA2'  ]
 var calendarTasks = [{}];
 
 //var Colors = ["Red", "Blue", "Orange", "Green", "Blue", "Pink", "White", "Purple"];
@@ -299,6 +299,7 @@ function displayTasks(json) {
     element.innerHTML = '';
     var user = window.location.hash.substr(1);
     var tasks = allTasks;
+    displayProfile(user);
     for (var i = 0; i < allTasks.length; i++) {
         const task = tasks[i];
         console.log(tasks[i]);
@@ -319,7 +320,6 @@ function displayTasks(json) {
             <br>
         `;
         element.appendChild(thing)
-        //if (taskid == )
     }
     calendar.clear();
     calendar.createSchedules(calendarTasks);
@@ -380,4 +380,13 @@ function check(){
 function deletetask(id) {
     var id = "task" + id;
     document.getElementById(id).remove();
+}
+
+function displayProfile(id) {
+    var name = allPeople[id]["name"];
+    var a = document.getElementById("myprofile");
+    a.innerHTML = `
+    <h1>My Profile</h1>
+    <a>Name: ${name}</a>
+`
 }
