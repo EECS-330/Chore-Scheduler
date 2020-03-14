@@ -51,7 +51,7 @@ Users can add additional people to the schedule by clicking on the plus button n
 [pic of people profile]
 Users can view information of people on the schedule by clicking on the name of a person in the “People” side-tab. Using user feedback from P7 prototype testing , we color-coded each of the names in order to make it easier to distinguish each person and his or her chores. Each of these profiles includes name, email, and work done this week, allowing users to keep track of the time distribution of chores.
 
-# Adding a task to the schedule
+## Adding a task to the schedule
 [pic of add task form] [pic of task side-tab] 
 Users can add tasks to the schedule by clicking on the plus button next to “Tasks,” which creates a pop-up form. After filling in the task’s details, the task is added to the list in the “Tasks” side-tab and to the pool of tasks to be allocated. This way, the user sees clear usability of the form, something that TAs stressed in their feedback
 
@@ -88,7 +88,6 @@ https://github.com/EECS-330/Chore-Scheduler
 Working version of your prototype
 https://eecs-330.github.io/Chore-Scheduler/
 
-Instructions for running your app (including how your prototype is best viewed).
-The prototype is best viewed using Google Chrome. First the user logs into our app by entering their UserID (0,1,2) and clicking the “Submit” button. [.....]
+The prototype is best viewed using Google Chrome. First the user logs into our app by entering their UserID (0,1,2) and clicking the “Submit” button.
 
 
