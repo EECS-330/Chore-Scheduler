@@ -3,7 +3,7 @@ function greenify(checkName)
    
    if (document.getElementById(checkName).checked) 
   {
-    document.getElementById(checkName).parentElement.style.background = '#9fdf9f';
+    document.getElementById(checkName).parentElement.style.background = '#D5F5E3';
     var res = checkName.split("completed");
     var num = res[1];
     num = parseInt(num);
@@ -12,7 +12,7 @@ function greenify(checkName)
     calendar.createSchedules(calendarTasks);
     calendar.render(true);
   } else {
-    document.getElementById(checkName).parentElement.style.background = '#ffcccc';
+    document.getElementById(checkName).parentElement.style.background = '#FADBD8';
     var res = checkName.split("completed");
     var num = res[1];
     num = parseInt(num);
@@ -24,7 +24,7 @@ function greenify(checkName)
 }
 var test = [1,2,3]
 
-var allPeople = [{"id":0, "name": "John Smith", "color": '#5DB1D1'},{ "id":1, "color":"#FFB7B2", "name": "Bob Jones"}, {"id":2, "name": "Sam Johnson", "color":"#8FC1A9"}]
+var allPeople = [{"id":0, "name": "John Smith", "color": '#99ddff'},{ "id":1, "color":"#FFB7B2", "name": "Bob Jones"}, {"id":2, "name": "Sam Johnson", "color":"#8FC1A9"}]
 var allTasks = [["Trash", "Throwing out trash and replacing garbage bag", "Start: 10:30am", "Duration: 2 hrs", '2020-03-11T10:30:00', '2020-03-11T12:30:00'],
 ["Clean", "Vaccum room and mop floor", "Start: 8:30pm", "Duration: 2 hrs", '2020-03-10T20:30:00', '2020-03-10T22:30:00'], ["Errand", "Buy groceries", "Start: 11:00am", "Duration: 30 minutes", '2020-03-12T11:00:00', '2020-03-12T11:30:00'],
 ["Clean", "cleaning bathroom", "Start: 3:00pm", "Duration: 1 hr", '2020-03-12T14:30:00', '2020-03-12T15:30:00'],
@@ -33,7 +33,7 @@ var allTaskstoPeople = [0, 1, 1, 0, 2];
 
 var Dates = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-var Colors = [ '#5DB1D1','#FFB7B2','#8FC1A9','#FFDAC1', '#E2F0CB','#C7CEEA', '#AFD5AA' , '#FF9AA2'  ]
+var Colors = [ '#99ddff','#FFB7B2','#8FC1A9','#FFDAC1', '#E2F0CB','#C7CEEA', '#AFD5AA' , '#FF9AA2'  ]
 var calendarTasks = [{}];
 
 //var Colors = ["Red", "Blue", "Orange", "Green", "Blue", "Pink", "White", "Purple"];
