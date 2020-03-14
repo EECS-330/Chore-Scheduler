@@ -1,6 +1,6 @@
-h1 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 24px;
+/*h1 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 24px;
     font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
-}
+}*/h1 { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; font-size: 24px; font-style: normal; font-variant: small-caps; font-weight: 900; line-height: 14.4px;  letter-spacing: 3px; }
 h3 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 19px;
     font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
 p { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 14px;
@@ -12,6 +12,13 @@ blockquote { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sa
 pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 13px;
     font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
+
+    /*h1{ font-family: 'IBM Plex Serif', serif; font-weight:lighter;}
+    h3 {font-family: 'Raleway', sans-serif;}
+    p {font-family: 'Raleway', sans-serif;}
+    div {font-family: 'Raleway', sans-serif;}
+    blockquote {font-family: 'Raleway', sans-serif;}
+    pre {font-family: 'Raleway', sans-serif;}*/
 .submit{
    padding-top: 5px;
    margin-top: 5px;
@@ -21,14 +28,15 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
 
 .people {
   grid-area: people;
-   padding-left: 5px;
-   border-style:solid;
+   padding-left: 0px;
+   /*border-style:solid;
    border-color:gray;
    border-width:2px;
-   border-radius:15px;
+   border-radius:15px;*/
    justify-self: stretch;
    align-self: stretch;
    text-align:center;
+   background-color: #5D6D7E;
 }
 
 .person-card{
@@ -56,9 +64,8 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
 			margin: 0px;
 }
 .task-card {
-   height: 100px;
    justify-self: stretch;
-   background-color: #ffcccc;
+   background-color: #FADBD8 ;
    position: relative;
    margin:4px;
    padding-left: 3px;
@@ -94,10 +101,10 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
   grid-area: calendar;
    padding-top:5px;
    padding-left: 10px;
-   border-style:solid;
+   /*border-style:solid;
    border-color:gray;
    border-width:2px;
-   border-radius:15px;
+   border-radius:15px;*/
    justify-self: stretch;
    align-self: stretch;
    text-align:center;
@@ -108,10 +115,10 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
 }
 .pieChart {
   grid-area: pieChart;
-   border-style:solid;
+   /*border-style:solid;
    border-color:gray;
    border-width:2px;
-   border-radius:15px;
+   border-radius:15px;*/
    padding-top:5px;
    padding-left: 5px;
    justify-self: stretch;
@@ -121,14 +128,16 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
 }
 .tasks {
   grid-area: tasks;
-   border-style:solid;
+   /*border-style:solid;
    border-color:gray;
    border-width:2px;
-   border-radius:15px;
+   border-radius:15px;*/
    justify-self: stretch;
    align-self: stretch;
-   margin-bottom: 20px;
+   /*margin-bottom: 0px;
+   margin-bottom: 0px;*/
    text-align:center;
+   background-color: #5D6D7E ;
 }
 .card3 {
   grid-area: card3;
@@ -139,7 +148,7 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
 }
 .main {
   grid-area: main;
-   background-color: LightSkyBlue;
+   /*background-color: LightSkyBlue;*/
    justify-self: stretch;
    align-self: stretch;
 }
@@ -153,13 +162,13 @@ pre { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-seri
 
 .container {
    display: grid;
-   background-color:#F0FFFF;
-   border-color: #F0FFFF; 
+   /*background-color:#F0FFFF;
+   border-color: #F0FFFF; */
 
    grid-template-columns: 20% 60% auto;
    grid-template-rows: 70% 30%;
    grid-column-gap: 10px;
-   grid-row-gap: 10px;
+   grid-row-gap: 0px;
    grid-template-areas:
       "tasks calendar pieChart"
       "people calendar .";
@@ -220,8 +229,18 @@ nav h1 {
 
 .addTask {
     height: 50%;
-    align-self: center;
-    justify-self: end;
+    /*align-self: center;*/
+    margin-top:25px;
+    /*justify-self: end;*/
+    display: inline-block;
+    margin-right: 40px;
+      
+        /* invisible border (will be colored on hover/focus) */
+        border: solid 1px transparent;
+        border-radius: 4px;
+    
+      
+        /* make sure colors have enough contrast! */
 }
 .people-title{
 				display: inline-block;
@@ -230,6 +249,8 @@ nav h1 {
     display: inline-block;
     justify-self: end;
     margin-right: 0px;
+    border: solid 1px transparent;
+    border-radius: 4px;
 }
 
 /* Modal Content */
