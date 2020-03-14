@@ -48,13 +48,13 @@
             <div class="formStuff">
                <form  id = "task_form" onsubmit="return submit_task(event);">
                   <label for="tname">Task Name</label>
-                  <input type="text" id="tname" placeholder="Ex: cleaning..">
+                  <input type="text" id="tname" placeholder="Ex: cleaning.." required>
 
                   <label for="tdescription">Task Description</label>
-                  <input type="text" id="tdescription" placeholder="Ex: vacuum floors, swiffer floors, ...">
+                  <input type="text" id="tdescription" placeholder="Ex: vacuum floors, swiffer floors, ..." required>
                   <label for="timeType">Duration</label>
                   <duration>
-                     <input type="text" id="tinput" placeholder="Ex: 120, 50, ...">
+                     <input type="text" id="tinput" placeholder="Ex: 120, 50, ..." required>
                      <select id="timeType" name="timeType">
                         <option value="hr">Hours</option>
                         <option value="min">Minutes</option>
@@ -92,10 +92,10 @@
             <div class="formStuff">
                <form onsubmit="return submit_person();">
                   <label for="pname">Name</label>
-                  <input type="text" id="pname" placeholder="Ex: Jeff, Smith, Bob">
+                  <input type="text" id="pname" placeholder="Ex: Jeff, Smith, Bob" required>
 
                   <label for="email">Email Address</label>
-                  <input type="text" id="email" placeholder="Ex: smithbob@gmail.com">
+                  <input type="text" id="email" placeholder="Ex: smithbob@gmail.com" required>
 
                   <input type="submit">
                </form>
