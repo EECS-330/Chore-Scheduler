@@ -46,30 +46,39 @@ With all these prototyping stages and feedback in mind, we ensured that users co
 
 ### Logging into account and viewing user profile
 [pic of log-in screen]
+
 Users are able to log into their account via a log-in screen shown above. Features such as the text box and submit button made it intuitive for users to get access to their own account and schedule.
+
 [pic of user-profile]
+
 In order for the user to access their profile, they can click on their name on the “People” side-tab. Using feedback from P7 prototype testing, we added an indicator on the top right to show who is currently logged into the app. 
 
 ### Adding a person to the schedule
 [pic of add person form ] [pic of person side-tab]
+
 Users can add additional people to the schedule by clicking on the plus button next to “People.” which creates a pop-up form. After filling in the person’s information, the individual is added to the list in the “People” side-tab.
 
 [pic of people profile]
+
 Users can view information of people on the schedule by clicking on the name of a person in the “People” side-tab. Using user feedback from P7 prototype testing, we color-coded each of the names in order to make it easier to distinguish each person and his or her chores. Each of these profiles includes name, email, and work done this week, allowing users to keep track of the time distribution of chores.
 
 ### Adding a task to the schedule
 [pic of add task form] [pic of task side-tab] 
+
 Users can add tasks to the schedule by clicking on the plus button next to “Tasks,” which creates a pop-up form. After filling in the task’s details, the task is added to the list in the “Tasks” side-tab and to the pool of tasks to be allocated. This way, the user sees clear usability of the form, something that TAs stressed in their feedback
 
 ### Interacting with tasks on calendar and task side-bar (completing and deleting)
 [pic of completing a task and what changes]
+
 Users can mark a task as complete by clicking the checkmark associated with the task on the task side-bar. Doing this turns the task green on the task side-bar and gray on the calendar, signifying that the task is completed. The associativity of the task side-bar and calendar was often brought up during P5 and P6 prototyping stages, which led to this feature. 
 
 [pic of deleting task and what changes]
+
 Users can also delete a task by clicking on a task on the calendar and clicking “Delete”. This removes the task from both the calendar and the task side-bar. 
 
 ### (Re)allocating tasks to people
 [pic of reallocate button] [pic of schedule before and after pressing]
+
 Once all tasks are added to the task pool, the user may allocate the tasks such that all the tasks are divided among the individuals in the People section by clicking “Reallocate”. If the user wishes to change the allocation, they can click the reallocate button to have a different schedule assignment.
 
 ## Components
