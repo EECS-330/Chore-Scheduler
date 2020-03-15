@@ -40,23 +40,29 @@ With all these prototyping stages and feedback in mind, we ensured that users co
 
 ## Logging into account and viewing user profile
 ![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/login.png)
+
 Users are able to log into their account via a log-in screen shown above. Features such as the text box and submit button made it intuitive for users to get access to their own account and schedule.
 ![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/sideprofile.png)
+
 In order for the user to access their profile, they can click on their name on the “People” side-tab. Using feedback from P7 prototype testing, we added an indicator “(You)” to the name of the user currently logged in to distinguish who is currently using the app. 
 
 ## Adding a person to the schedule
 ![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/addperson.png)
+
 Users can add additional people to the schedule by clicking on the plus button next to “People.” which creates a pop-up form. After filling in the person’s information, the individual is added to the list in the “People” side-tab.
 
 ![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/profile.png)
+
 Users can view information of people on the schedule by clicking on the name of a person in the “People” side-tab. Using user feedback from P7 prototype testing , we color-coded each of the names in order to make it easier to distinguish each person and his or her chores. Each of these profiles includes name, email, and work done this week, allowing users to keep track of the time distribution of chores.
 
 ## Adding a task to the schedule
 ![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/addtask.png)
+
 Users can add tasks to the schedule by clicking on the plus button next to “Tasks,” which creates a pop-up form. After filling in the task’s details, the task is added to the list in the “Tasks” side-tab and to the pool of tasks to be allocated. This way, the user sees clear usability of the form, something that TAs stressed in their feedback
 
 ## Interacting with tasks on calendar and task side-bar (completing and deleting)
 ![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/task.png)
+
 Users can mark a task as complete by clicking the checkmark associated with the task on the task side-bar. Doing this turns the task green on the task side-bar and gray on the calendar, signifying that the task is completed. The associativity of the task side-bar and calendar was often brought up during P5 and P6 prototyping stages, which led to this feature. 
 
 [pic of deleting task and what changes]
