@@ -1,9 +1,12 @@
-# project
+# Chore Scheduler App | Section 69 Team 1
 
-Members:
+#### Members:
 Anthony Chen
+
 Jonathan Liu
+
 Priya Kini
+
 Sahil Doshi
 
 # Problem & Related Work (P1)
