@@ -83,7 +83,7 @@ To view their schedule, users can view their custom calendar which is generated 
 During the development of this application, we first focused on outlining the layout of the main page and then worked to implement functional behaviors. The advantage to this approach was that we did not have to focus on visual design and functionality at the same time, so we could ensure each individual part was properly executed. Though we focused on each area individually, we struggled with developing a solidified plan as to which features were necessary and should be implemented in order for our application to serve its purpose. Because of this inefficient planning, there were times where we would develop a feature and then alter it multiple times because it didn’t align with a design that we would devise later. Therefore, if we were to do this process again, we would develop a more detailed plan that would make development of features more seamless. 
 In terms of future development, our first priority would be in creating a feature where people could upload a Google Calendar template to the app page, and the app would process these calendars and assign tasks accordingly. Once this feature is implemented, we would then focus on providing a more detailed analytics page where all members of a house can view how chores are distributed for this week and how chores have been historically distributed to ensure that the chores are being fairly distributed. Finally, we would implement a manual override option where individuals can change the assigned chore schedule if unexpected circumstances arise for an individual that prevent him or her from performing his or her chore. 
 
-#Links
+# Links
 
 Team’s repository
 https://github.com/EECS-330/Chore-Scheduler
