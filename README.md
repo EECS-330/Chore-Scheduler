@@ -101,6 +101,12 @@ https://github.com/EECS-330/Chore-Scheduler
 Working version of your prototype
 https://eecs-330.github.io/Chore-Scheduler/
 
-The prototype is best viewed using Google Chrome. First the user logs into our app by entering their UserID (0,1,2) and clicking the “Submit” button.
+Instructions for Use
+
+The prototype is best viewed using Google Chrome. 
+
+1. Open "index.html"
+2. Log into the app by entering any of the following user IDS: 0, 1, or 2
+3. Click the "Submit" button to enter the home page. 
 
 
