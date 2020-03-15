@@ -65,11 +65,9 @@ Users can add tasks to the schedule by clicking on the plus button next to “Ta
 
 Users can mark a task as complete by clicking the checkmark associated with the task on the task side-bar. Doing this turns the task green on the task side-bar and gray on the calendar, signifying that the task is completed. The associativity of the task side-bar and calendar was often brought up during P5 and P6 prototyping stages, which led to this feature. 
 
-[pic of deleting task and what changes]
 Users can also delete a task by clicking on a task on the calendar and clicking “Delete”. This removes the task from both the calendar and the task side-bar. 
 
 ## (Re)allocating tasks to people
-[pic of reallocate button] [pic of schedule before and after pressing]
 Once all tasks are added to the task pool, the user may allocate the tasks such that all the tasks are divided among the individuals in the People section by clicking “Reallocate”. If the user wishes to change the allocation, they can click the reallocate button to have a different schedule assignment.
 
 Our app has the following three components which we chose using feedback from user research and paper prototyping: 
