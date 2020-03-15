@@ -1,34 +1,34 @@
 function greenify(checkName)
 {
-   
-   if (document.getElementById(checkName).checked) 
-  {
-    document.getElementById(checkName).parentElement.style.background = '#D5F5E3';
-    var res = checkName.split("completed");
-    var num = res[1];
-    num = parseInt(num);
-    (calendarTasks[num])["bgColor"] = "Gray";
-    calendar.clear();
-    calendar.createSchedules(calendarTasks);
-    calendar.render(true);
-  } else {
-    document.getElementById(checkName).parentElement.style.background = '#FADBD8';
-    var res = checkName.split("completed");
-    var num = res[1];
-    num = parseInt(num);
-    (calendarTasks[num])["bgColor"] = (allPeople[allTaskstoPeople[num]])["color"];
-    calendar.clear();
-    calendar.createSchedules(calendarTasks);
-    calendar.render(true);
-  }  
+
+    if (document.getElementById(checkName).checked)
+    {
+        document.getElementById(checkName).parentElement.style.background = '#D5F5E3';
+        var res = checkName.split("completed");
+        var num = res[1];
+        num = parseInt(num);
+        (calendarTasks[num])["bgColor"] = "Gray";
+        calendar.clear();
+        calendar.createSchedules(calendarTasks);
+        calendar.render(true);
+    } else {
+        document.getElementById(checkName).parentElement.style.background = '#FADBD8';
+        var res = checkName.split("completed");
+        var num = res[1];
+        num = parseInt(num);
+        (calendarTasks[num])["bgColor"] = (allPeople[allTaskstoPeople[num]])["color"];
+        calendar.clear();
+        calendar.createSchedules(calendarTasks);
+        calendar.render(true);
+    }
 }
 var test = [1,2,3]
 
 var allPeople = [{"id":0, "name": "John Smith", "color": '#99ddff'},{ "id":1, "color":"#FFB7B2", "name": "Bob Jones"}, {"id":2, "name": "Sam Johnson", "color":"#8FC1A9"}]
 var allTasks = [["Trash", "Throwing out trash and replacing garbage bag", "Start: 10:30am", "Duration: 2 hrs", '2020-03-11T10:30:00', '2020-03-11T12:30:00'],
-["Clean", "Vaccum room and mop floor", "Start: 8:30pm", "Duration: 2 hrs", '2020-03-10T20:30:00', '2020-03-10T22:30:00'], ["Errand", "Buy groceries", "Start: 11:00am", "Duration: 30 minutes", '2020-03-12T11:00:00', '2020-03-12T11:30:00'],
-["Clean", "cleaning bathroom", "Start: 3:00pm", "Duration: 1 hr", '2020-03-12T14:30:00', '2020-03-12T15:30:00'],
-["Errand", "Buy toilet paper", "Start: 2:00pm", "Duration: 30 minutes", '2020-03-08T14:00:00', '2020-03-08T14:30:00']];
+    ["Clean", "Vaccum room and mop floor", "Start: 8:30pm", "Duration: 2 hrs", '2020-03-10T20:30:00', '2020-03-10T22:30:00'], ["Errand", "Buy groceries", "Start: 11:00am", "Duration: 30 minutes", '2020-03-12T11:00:00', '2020-03-12T11:30:00'],
+    ["Clean", "cleaning bathroom", "Start: 3:00pm", "Duration: 1 hr", '2020-03-12T14:30:00', '2020-03-12T15:30:00'],
+    ["Errand", "Buy toilet paper", "Start: 2:00pm", "Duration: 30 minutes", '2020-03-08T14:00:00', '2020-03-08T14:30:00']];
 var allTaskstoPeople = [0, 1, 1, 0, 2];
 
 var Dates = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -60,7 +60,7 @@ var btn_task = document.getElementById("myBtn_task");
 var btn_person = document.getElementById("myBtn_person");
 
 var personinfo = document.getElementById("personInformation");
-//Get the submit button for task 
+//Get the submit button for task
 //var submit_task = document.getElementById("Submit_task");
 
 // Get the <span> element that closes the task modal
@@ -102,7 +102,7 @@ span_personInfo.onclick = function() {
     var taskSection = document.getElementById("tasks");
     modal_task.style.display = "none";
     taskSection.innerHTML += '<section class="task-card">' +
-        '<h3 class="task-name">Title of Task</h3>' + 
+        '<h3 class="task-name">Title of Task</h3>' +
            `<p class="task-description">${description}</p>` +
          '<p class="task-duration">Duration: 10 minutes</p>' +
            '<input type="checkbox" id="completed1" name="task" class="task-completion" value="vachinde" onclick="greenify(this.id);">' +
@@ -126,7 +126,21 @@ function allocateTasksToPeople(){
     allTaskstoPeople = newArr;
     console.log(tasks)
     console.log(allTaskstoPeople)
-   	displayTasks();
+    displayTasks();
+}
+
+function allnumeric(inputtxt)
+{
+    var numbers = /^[0-9]+$/;
+    if(inputtxt.match(numbers))
+    {
+        return true;
+    }
+    else
+    {
+        alert('Please input numeric characters only');
+        return false;
+    }
 }
 
 function submit_task(event){
@@ -135,10 +149,12 @@ function submit_task(event){
     //var taskSection = document.getElementById("tasks");
     var timeInput = document.getElementById("tinput").value;
     var timeType = document.getElementById("timeType").value;
-
-
+    var timeInputBox = document.getElementById("tinput")
+    if (!allnumeric(timeInput)){
+        return;
+    }
     var newDates = [];
-    //loops through all possible dates 
+    //loops through all possible dates
     for (var i = 0; i < Dates.length; i++){
         if (document.getElementById(Dates[i]).checked){
             newDates.push(Dates[i]);
@@ -146,7 +162,7 @@ function submit_task(event){
         }
     }
     console.log(newDates);
-    
+
     //right now creates a given date
     //make sure to test you only check one day checkbox
     //TODO:
@@ -156,7 +172,7 @@ function submit_task(event){
     //add to list with that randomly generated date with the user inputted duration
 
     for (var j = 0; j < newDates.length; j++){
-        var newTask = [taskName, description, "Start: 8:30pm", "Duration: " + timeInput + timeType,'2020-03-09T20:30:00', '2020-03-09T21:30:00' ]; 
+        var newTask = [taskName, description, "Start: 8:30pm", "Duration: " + timeInput + timeType,'2020-03-09T20:30:00', '2020-03-09T21:30:00' ];
         allTasks.push(newTask);
         console.log(newTask);
     }
@@ -386,7 +402,6 @@ function displayProfile(id) {
     var name = allPeople[id]["name"];
     var a = document.getElementById("myprofile");
     a.innerHTML = `
-    <h1>My Profile</h1>
-    <a>Name: ${name}</a>
+    <a>Logged in: ${name}</a>
 `
 }
