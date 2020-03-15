@@ -176,6 +176,19 @@ function submit_task(event){
         allTasks.push(newTask);
         console.log(newTask);
     }
+
+    /*for (var j = 0; j < newDates.length; j++){
+        var hour = Math.floor(Math.random() * Math.floor(12)); // Assuming 12 hours are up for task completion
+        var hour_12 = hour + 12;
+        var hour_13 = hour + 13;
+        var hour_string = hour.toString();
+        var minute = Math.floor(Math.random() * Math.floor(timeArray.length)); // Assuming 12 hours are up for task completion
+        //var newTask = [taskName, description, "Start: " + hour_string + ":" + timeArray[minute] + "pm", "Duration: " + timeInput + timeType,'2020-03-09T' + hour_12.toString() + ':' + timeArray[minute] + ':00', '2020-03-09T' + hour_13.toString() + ':' + timeArray[minute] + ':00']; 
+        var newTask = {"Title" : taskName, "Description" : description, "Duration" : timeInput_val, "Day" : newDates[0]};
+        allTasks.push(newTask);
+        console.log(newTask);
+    }*/
+
     modal_task.style.display = "none";
     var form_task = document.getElementById("task_form");
     form_task.reset();
@@ -401,7 +414,26 @@ function deletetask(id) {
 function displayProfile(id) {
     var name = allPeople[id]["name"];
     var a = document.getElementById("myprofile");
+    var user = window.location.hash.substr(1);
+    var taskTime = 0;
+    for (var i = 0; i < allTasks.length; i++) {
+        if (allTaskstoPeople[i]!= user)
+            continue;
+        var x = allTasks[i][3];
+        //console.log(x);
+        str = x.split(" ");
+        var y = parseInt(str[1]);
+        console.log(str[2]);
+        if (str[2]=="hr" || str[2] == "hrs")
+            taskTime+=y*60;
+        else
+            taskTime+=y;
+    }
+    var email = name.split(" ").join("") + "@gmail.com";
     a.innerHTML = `
-    <a>Logged in: ${name}</a>
+    <h1>My Information</h1>
+    <div style = "text-align: left;"> <b>Logged in:</b> ${name}</div>
+    <div style = "text-align: left;"> <b>Email:</b> ${email}</div>
+    <div style = "text-align: left;"> <b> Total time for my tasks:</b> ${taskTime} minutes</div>
 `
 }
