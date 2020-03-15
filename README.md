@@ -48,7 +48,7 @@ With all these prototyping stages and feedback in mind, we ensured that users co
 [pic of log-in screen]
 Users are able to log into their account via a log-in screen shown above. Features such as the text box and submit button made it intuitive for users to get access to their own account and schedule.
 [pic of user-profile]
-In order for the user to access their profile, they can click on their name on the “People” side-tab. Using feedback from P7 prototype testing, we added an indicator “(You)” to the name of the user currently logged in to distinguish who is currently using the app. 
+In order for the user to access their profile, they can click on their name on the “People” side-tab. Using feedback from P7 prototype testing, we added an indicator on the top right to show who is currently logged into the app. 
 
 ### Adding a person to the schedule
 [pic of add person form ] [pic of person side-tab]
