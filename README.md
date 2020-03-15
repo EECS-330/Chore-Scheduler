@@ -52,7 +52,7 @@ In order for the user to access their profile, they can click on their name on t
 
 ### Adding a person to the schedule
 ![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/addperson.png)
-
+ 
 Users can add additional people to the schedule by clicking on the plus button next to “People.” which creates a pop-up form. After filling in the person’s information, the individual is added to the list in the “People” side-tab.
 
 ![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/profile.png)
