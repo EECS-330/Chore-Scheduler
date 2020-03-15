@@ -66,7 +66,8 @@ Users can add tasks to the schedule by clicking on the plus button next to “Ta
 
 Users can mark a task as complete by clicking the checkmark associated with the task on the task side-bar. Doing this turns the task green on the task side-bar and gray on the calendar, signifying that the task is completed. The associativity of the task side-bar and calendar was often brought up during P5 and P6 prototyping stages, which led to this feature. 
 
-![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/delete.png)
+![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/delete.PNG)
+
 Users can also delete a task by clicking on a task on the calendar and clicking “Delete”. This removes the task from both the calendar and the task side-bar. 
 
 ### (Re)allocating tasks to people
