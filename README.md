@@ -90,6 +90,6 @@ https://github.com/EECS-330/Chore-Scheduler
 Working version of your prototype
 https://eecs-330.github.io/Chore-Scheduler/
 
-The prototype is best viewed using Google Chrome. First the user logs into our app by entering their UserID (0,1,2) and clicking the “Submit” button.
+The prototype is best viewed using Google Chrome. First the user logs into our app by entering their UserID (0,1,2) and clicking the “Submit” button. Then the user can view their own calander and use the interface accordingly.
 
 
