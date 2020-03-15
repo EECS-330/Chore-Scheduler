@@ -3,13 +3,16 @@
 
 <head>
     <title>HTML Redirect</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<h1> Login Page </h1>
-<body>
-<div id="topBar"> <a> User ID </a> </div>
+<h1 style = "text-align: center;"> Chore Scheduler </h1>
+<body style = "background-color:#cce6ff">
+<div id="topBar" style = "text-align: center; margin-top: 100px; margin-bottom: 10px;"> <a>Enter your User ID </a> </div>
 <form id="form" onsubmit="return false;">
-    <input type="text" id="userInput" />
-    <input type="submit" value = "Login" onclick="load_home();" />
+    <input type="text" id="userInput" style="width: 300px; display: block;
+    margin: 0 auto; justify-self: center; justify-content: center;"/>
+    <input type="submit" style = "display: block;
+    margin : 0 auto; justify-self: center; margin-top: 20px; width: 300px;" value = "Login" onclick="load_home();" />
 </form>
 
 <a id = "Error"></a>
