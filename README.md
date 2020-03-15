@@ -40,7 +40,7 @@ This week, we added the interactive calendar using the Toast calendar API where 
 With all these prototyping stages and feedback in mind, we ensured that users could complete the following tasks on our app: 
 
 ### Logging into account and viewing user profile
-![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/login.png | height=400)
+![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/login.png)
 
 Users are able to log into their account via a log-in screen shown above. Features such as the text box and submit button made it intuitive for users to get access to their own account and schedule.
 ![alt text](https://github.com/EECS-330/Chore-Scheduler/blob/master/sideprofile.png)
